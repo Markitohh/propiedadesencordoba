@@ -12,6 +12,7 @@ class PostularComprador extends Component
     public $hour;
     public $tel;
     public $propiedad;
+    public $yaPostulado;
 
     protected $rules = [
         'date' => ['required', 'date', 'after:yesterday'],
@@ -22,6 +23,13 @@ class PostularComprador extends Component
     public function mount(Propiedad $propiedad)
     {
         $this->propiedad = $propiedad;
+        if (auth()->check()) {
+            $this->yaPostulado = $propiedad->candidatos()
+                ->where('user_id', auth()->user()->id)
+                ->exists();
+        } else {
+            $this->yaPostulado = false;
+        }
     }
 
     public function messages()
@@ -38,6 +46,10 @@ class PostularComprador extends Component
 
     public function postularme()
     {   
+        if ($this->yaPostulado) {
+            return;
+        }
+
         $datos = $this->validate();
 
         $this->propiedad->candidatos()->create([
@@ -51,6 +63,7 @@ class PostularComprador extends Component
         $this->propiedad->vendedor->notify(new NuevoCandidato($this->propiedad->id, $this->propiedad->titulo, auth()->user()->id));
 
         session()->flash('mensaje', 'Se envío correctamente');
+        $this->yaPostulado = true;
         return redirect()->back();
     }
 

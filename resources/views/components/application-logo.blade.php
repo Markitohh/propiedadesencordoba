@@ -7,7 +7,7 @@
 
 <div class="flex items-center justify-center gap-3">
   <h1 class="text-2xl md:text-3xl text-gray-900 dark:text-white">
-    Propiedades
+    Propiedades Rodriguez
   </h1>
   <svg xmlns="http://www.w3.org/2000/svg" 
        viewBox="0 0 24 24" 

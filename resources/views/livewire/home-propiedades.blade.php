@@ -1,5 +1,5 @@
 <div>
-    <div class="p-12">
+    <div id="propiedades" class="p-12">
         <div class="max-w-7xl mx-auto">
             <h3 class="font-extrabold text-4xl text-gray-800 dark:text-white mb-12">
                 Nuestras Propiedades Disponibles

@@ -1,7 +1,12 @@
-<div class="p-5 mt-10 bg-gray-600 dark:bg-gray-900 rounded-lg flex justify-center flex-col items-center md:col-span-2">
+<div class="p-5 mt-10 bg-gray-200 dark:bg-gray-900 rounded-lg flex justify-center flex-col items-center md:col-span-2">
     <h3 class="text-center text-1xl font-bold my-4">Agendar un Zoom</h3>
 
-    @if (session()->has('mensaje'))
+    @if ($yaPostulado)
+        <div class="uppercase bg-green-200 border border-green-800 text-green-800 font-bold p-3 my-5 rounded-lg text-center">
+            <p class="text-lg">✅ Ya te has postulado para esta propiedad.</p>
+            <p class="text-sm mt-1">Pronto recibirás una respuesta del vendedor.</p>
+        </div>
+    @elseif (session()->has('mensaje'))
         <div class="uppercase bg-green-200 border border-green-800 text-green-800 font-bold p-2 my-5">
             {{session('mensaje')}}
         </div>

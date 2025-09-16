@@ -32,14 +32,22 @@
     </div>
 
     @guest
-        <div class="w-full mt-5 text-center p-5 md:col-span-2 md:items-center bg-gray-600 dark:bg-gray-400 rounded-lg">
-            <p class="text-black dark:text-white">
+        <div class="w-full mt-5 text-center p-5 md:col-span-2 md:items-center bg-gray-200 dark:bg-gray-900 rounded-lg">
+            <p class="text-xl font-bold text-black dark:text-white">
                 ¿Te interesa la propiedad? <a class="font-bold text-indigo-600" href="{{ route('register') }}">Obten una cuenta y consulta sus detalles!</a>
             </p>
         </div>
     @endguest
 
-    @cannot('create', App\Models\Propiedad::class)
-        <livewire:postular-comprador :propiedad="$propiedad" />
-    @endcannot
+    @auth
+        {{-- Verifica que el usuario no sea el creador de la propiedad --}}
+        @if ($propiedad->user_id !== auth()->user()->id)
+            <livewire:postular-comprador :propiedad="$propiedad" />
+        @else
+            {{-- Mensaje para el dueño de la propiedad --}}
+            <div class="p-5 mt-10 bg-gray-200 dark:bg-gray-900 rounded-lg flex justify-center flex-col items-center md:col-span-2">
+                <p class="text-xl font-bold text-gray-800 dark:text-white">Esta es tu propiedad. No puedes postularte.</p>
+            </div>
+        @endif
+    @endauth
 </div>
