@@ -1,25 +1,3 @@
-{{-- <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-
-    @foreach ($propiedades as $propiedad)
-        <div class="p-6 text-gray-900 dark:text-gray-100">
-            <div class="leading-10">
-                <a href="#" class="text-xl font-bold">{{$propiedad->titulo}}</a>
-                <span class="
-                    inline-block px-2 py-1 text-xs font-semibold rounded-full
-                    @switch($propiedad->tipoPropiedad->nombre)
-                        @case('Casa') bg-blue-100 text-blue-800 @break
-                        @case('Departamento') bg-green-100 text-green-800 @break
-                        @case('Terreno') bg-yellow-100 text-yellow-800 @break
-                        @default bg-gray-100 text-gray-800
-                    @endswitch
-                ">
-                    {{ $propiedad->tipoPropiedad->nombre }}
-                </span>
-            </div>
-        </div>    
-    @endforeach
-
-</div> --}}
 <div>
     <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
 
@@ -29,13 +7,6 @@
             </p>
         @else
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                @if (session('mensaje'))
-                    <div class="bg-green-500 text-white p-2 rounded mb-3">
-                        {{ session('mensaje') }}
-                    </div>
-                @endif
-
                 @foreach ($propiedades as $propiedad)
                     <div class="bg-white dark:bg-gray-900 rounded-xl shadow-md overflow-hidden border border-gray-200 dark:border-gray-700 flex flex-col">
 

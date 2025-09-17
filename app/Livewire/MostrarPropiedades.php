@@ -24,7 +24,7 @@ class MostrarPropiedades extends Component
 
     public function render()
     {
-        $propiedades = Propiedad::with('tipoPropiedad')->where('user_id', auth()->user()->id)->paginate(10);
+        $propiedades = Propiedad::with('tipoPropiedad')->where('user_id', auth()->user()->id)->orderBy('created_at', 'desc')->paginate(10);
         return view('livewire.mostrar-propiedades', [
             'propiedades' => $propiedades
         ]); 

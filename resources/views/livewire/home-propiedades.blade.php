@@ -11,7 +11,7 @@
                 <a href="{{ route('propiedades.show', $propiedad->id) }}" class="block">
                     <div class="h-56 overflow-hidden rounded-t-xl">
                         <img 
-                            src="{{ asset('img/1993740222.jpg') }}" 
+                            src="{{ asset('storage/propiedades/portadas/' . $propiedad->imagen) }}"
                             alt="{{ 'Imagen de la propiedad ' . $propiedad->titulo }}" 
                             class="w-full h-full object-cover"
                         >
@@ -21,7 +21,7 @@
                         <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">
                             {{ $propiedad->titulo }}
                         </h3>
-                        <p class="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">
+                        <p class="text-xl font-semibold text-emerald-600 dark:text-emerald-400 mb-2">
                             Precio: ${{ number_format($propiedad->precio, 0, ',', '.') }}
                         </p>
                         <p class="text-sm text-gray-600 dark:text-gray-300 mb-1">

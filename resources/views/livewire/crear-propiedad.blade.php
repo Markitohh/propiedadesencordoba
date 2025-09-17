@@ -155,7 +155,7 @@
             accept="image/*" />
 
         <div class="my-5">
-            @if ($imagen)
+            @if ($imagen) 
                 <p>Imagen seleccionada: <img src="{{ $imagen->temporaryUrl() }}" alt="Imagen seleccionada"></p>
             @endif
         </div>
