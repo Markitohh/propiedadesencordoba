@@ -45,14 +45,14 @@ class CrearPropiedad extends Component
         $datos = $this->validate();
 
         // Almacenar la imagen de portada
-        $imagen = $this->imagen->store('propiedades/portadas');
+        $imagen = $this->imagen->store('propiedades/portadas', 'public');
         $datos['imagen'] = str_replace('propiedades/portadas/', '', $imagen);
 
         // Almacenar las imagenes de galeria
         $imagenes = [];
         if ($this->imagenes) {
             foreach ($this->imagenes as $imagen) {
-                $ruta = $imagen->store('propiedades/galeria');
+                $ruta = $imagen->store('propiedades/galeria', 'public');
                 $imagenes[] = str_replace('propiedades/galeria/', '', $ruta);
             }
         }
