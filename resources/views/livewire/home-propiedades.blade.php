@@ -28,7 +28,7 @@
                             <span class="font-semibold">Ubicación:</span> {{ $propiedad->direccion }}, {{ $propiedad->ciudad }}
                         </p>
                         <p class="text-sm text-gray-600 dark:text-gray-300">
-                            <span class="font-semibold">Vendido por:</span> {{ $propiedad->usuario->name }}
+                            <span class="font-semibold">Publicado por:</span> {{ $propiedad->usuario->name }}
                         </p>
                         <div class="mt-2">
                             <a 

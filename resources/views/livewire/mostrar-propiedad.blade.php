@@ -21,7 +21,7 @@
             </div>
             <p> {{ $propiedad->descripcion }} </p>
             <p> 
-                Vendido por: <span class="text-sm text-gray-600 dark:text-gray-400">{{ $propiedad->usuario->name }}</span>
+                Publicado por: <span class="text-sm text-gray-600 dark:text-gray-400">{{ $propiedad->usuario->name }}</span>
             </p>
         </div>
     </div>
@@ -78,7 +78,7 @@
                 </div>
                 <p class="mt-4 text-gray-700 dark:text-gray-300">Descripción: {{ $propiedad->descripcion }} </p>
                 <p class="mt-4 text-sm text-gray-500 dark:text-gray-400"> 
-                    Vendido por: <span class="font-bold">{{ $propiedad->usuario->name }}</span>
+                    Publicado por: <span class="font-bold">{{ $propiedad->usuario->name }}</span>
                 </p>
                 <div class="flex justify-start items-center mt-4 gap-2">
                     <p class="font-bold text-gray-700 dark:text-gray-300">Para más información:</p>
