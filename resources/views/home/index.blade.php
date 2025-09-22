@@ -10,7 +10,7 @@
                                     La propiedad que <span class="text-indigo-600 dark:text-indigo-400">siempre quisiste!</span>
                                 </h2>
                                 <p class="mt-6 max-w-xl mx-auto md:mx-0 text-xl text-gray-600 dark:text-gray-300 animate__animated animate__bounceInUp">
-                                    Encuentra la propiedad de tus sueños en Córdoba. Desde cabañas hasta la casa de tus sueños, ¡y mucho más!
+                                    Encuentra la propiedad de tus sueños en Córdoba. Desde cabañas hasta una casa, ¡y mucho más!
                                 </p>
                                 
                                 <div class="mt-8">
